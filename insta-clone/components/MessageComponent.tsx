@@ -51,7 +51,7 @@ interface MessageComponentProps {
   onBack: () => void;
 }
 
-const socket = io('http://0.0.0.0:4000');
+const socket = io(`process.env.NEXT_PUBLIC_URL`);
 
 const MessageComponent: React.FC<MessageComponentProps> = ({ chatData, onBack }) => {
   const [messageInput, setMessageInput] = useState('');
